@@ -1,31 +1,27 @@
-var uri = "https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/realtimedeparturesV4.json?key=b0c3cced0bba45c58222712c148b6cf2&siteid=4122&timewindow=10";
+var uri = "https://cors-anywhere.herokuapp.com/http://api.sl.se/api2/realtimedeparturesV4.json?key=b0c3cced0bba45c58222712c148b6cf2&siteid=9633&timewindow=60";
 
+const boi = document.getElementById('trams');
 
-const info = document.getElementById('buses');
 
 fetch(uri)
 .then((resp)=>resp.json())
+
 .then(function(data)
 {
-        let linje = data.ResponseData.Buses;
-        return linje.map(function(busobj)
+        let tram = data.ResponseData.Trams;
+    
+        return tram.map(function(tramobj)
     {
-        info.innerHTML += `${busobj.LineNumber} an mot `;
-        info.innerHTML += `${busobj.Destination} kommer om `;
-        info.innerHTML += `${busobj.DisplayTime} `;
-        if(busobj.Deviations != null)
+        boi.innerHTML += `${tramobj.LineNumber}an`;
+        boi.innerHTML += ` ${tramobj.Destination} ankommer om `;
+        boi.innerHTML += `${tramobj.DisplayTime} minuter`;
+        if(tramobj.Deviations != null)
 {
-    busobj.Deviations.forEach(foo=>
+    tramobj.Deviations.forEach(foo=>
     {
-        const bar = document.createElement('strong');
-        bar.textContent = foo.Text;
-        info.appendChild(bar);
-        info.innerHTML += `<br>`;
+        boi.innerHTML += `<br>`;
     })
 }
-else
-{
-    info.innerHTML += `<br>`
-}
+else{boi.innerHTML += `<br>`}
 })    
 })
