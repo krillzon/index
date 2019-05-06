@@ -5,8 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>SL-Info</title>
         <link rel="stylesheet" href="css/CSS.css">
+        
+        <script>
+			function changeColor (color)
+			{
+				document.body.style.backgroundColor = color;
+			}
+
+		</script>
+        
+        
     </head>
     <body>
+        
+    
+        <h2>Change color</h2>
+    <input type="color" onchange="changeColor(this.value);"/>
+        
+        
+        
+        <form>
+        <input type="button" value ="Back"
+        onclick="window.location.href='https://krillzon.github.io/web/'">
+        </form>
         <div id="trams"></div>
         <script src="javascript.js"></script>
     </body>
