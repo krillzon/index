@@ -29,9 +29,9 @@ fetch(uri)
         krippa.innerHTML += `Wind speed: ${wind.speed}m/s<br>`
         
         krippa.innerHTML += `Humidity: ${temp.humidity}%<br>`
-        krippa.innerHTML += `Pressure: ${temp.pressure}<br>`
-        krippa.innerHTML += `Live Temperature: ${temp.temp}<br>`
-        krippa.innerHTML += `(Max temp: ${temp.temp_max}, min temp: ${temp.temp_min})<br>`;
+        krippa.innerHTML += `Pressure: ${temp.pressure}Pa<br>`
+        krippa.innerHTML += `Live Temperature: ${temp.temp - 273}°<br>`
+        krippa.innerHTML += `(Max temp: ${temp.temp_max - 273}°, min temp: ${temp.temp_min - 273}°)<br>`;
 
     
     
