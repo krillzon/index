@@ -1,10 +1,15 @@
 
 
 
-
-
-
-
+var a = document.createElement('a');
+var braking = document.createElement('br');
+var linkText = document.createTextNode("Enter Sodapoppins channel   ");
+a.appendChild(linkText);
+//titel är till för om du vill ha info när du håller på länken
+//a.title = "my title text";
+a.href = "https://www.twitch.tv/sodapoppin";
+document.body.appendChild(a);
+document.body.appendChild(braking); 
 
 
 
@@ -22,8 +27,8 @@ fetch(uri)
     let info = data.stream;
     let channelinfo = data.stream.channel;
     if (info.stream_type == "live"){
-       
-  krippa.innerHTML += ` CHANNEL NUMBER 1: Sodapoppin. <br>`;
+
+  krippa.innerHTML += ` CHANNEL: Sodapoppin. <br>`;
     krippa.innerHTML += ` ${channelinfo.display_name} is playing: ${info.game} <br> Viewer count: ${info.viewers}<br>`;
     krippa.innerHTML += `Started the stream ${info.created_at.slice(0,10)} Time: ${info.created_at.slice(11,19)}<br>`;
     krippa.innerHTML += `Average fps: ${info.average_fps} with "${info.delay}" delay<br><br>`;
@@ -33,10 +38,22 @@ fetch(uri)
     krippa.innerHTML += ` Total views: ${channelinfo.views}<br>`;
     krippa.innerHTML += ` Total followers: ${channelinfo.followers}<br>`;
     krippa.innerHTML += ` Channel created on: ${channelinfo.created_at.slice(0,10)} Time: ${channelinfo.created_at.slice(11,19)}<br>`;
+
     }
-    else{krippa.innerHTML += ` CHANNEL NUMBER 1: Sodapoppin, is offline.<br>`;}
+
+
 })
 
+
+var a = document.createElement('a');
+var braking = document.createElement('br');
+var linkText1 = document.createTextNode("Enter Towelliees channel    ");
+a.appendChild(linkText1);
+//titel är till för om du vill ha info när du håller på länken
+//a.title = "my title text";
+a.href = "https://www.twitch.tv/towelliee";
+document.body.appendChild(a);
+document.body.appendChild(braking);
 
 
 
@@ -53,8 +70,9 @@ fetch(url)
     let info = data.stream;
     let channelinfo = data.stream.channel;
     if (info.stream_type == "live"){
+        
         krippa.innerHTML += ` <br><br><br>`;
-        krippa.innerHTML += ` CHANNEL NUMBER 3: Towelliee. <br>`;
+        krippa.innerHTML += ` CHANNEL: Towelliee. <br>`;
         kripps.innerHTML += ` ${channelinfo.display_name} is playing: ${info.game} <br> Viewer count: ${info.viewers}<br>`;
         kripps.innerHTML += `Started the stream ${info.created_at.slice(0,10)} Time: ${info.created_at.slice(11,19)}<br>`;
         kripps.innerHTML += `Average fps: ${info.average_fps} with "${info.delay}" delay<br><br>`;
@@ -72,6 +90,15 @@ fetch(url)
 
 
 
+var a = document.createElement('a');
+var linkText = document.createTextNode("Enter Scrubnoobs channel   ");
+a.appendChild(linkText);
+//titel är till för om du vill ha info när du håller på länken
+//a.title = "my title text";
+a.href = "https://www.twitch.tv/scrubnoob";
+document.body.appendChild(a); 
+
+
 
 var urc = "https://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/streams/scrubnoob?client_id=bes85lrqw0ktigy2rjfb174d4oc2hu";
 
@@ -87,7 +114,7 @@ fetch(urc)
     let channelinfo = data.stream.channel;
     if (info.stream_type == "live"){
         krippf.innerHTML += ` <br><br><br>`;
-        krippf.innerHTML += ` CHANNEL NUMBER 2: Scrubnoob. <br>`;
+        krippf.innerHTML += ` CHANNEL: Scrubnoob. <br>`;
         krippf.innerHTML += ` ${channelinfo.display_name} is playing: ${info.game} <br> Viewer count: ${info.viewers}<br>`;
         krippf.innerHTML += `Started the stream ${info.created_at.slice(0,10)} Time: ${info.created_at.slice(11,19)}<br>`;
         krippf.innerHTML += `Average fps: ${info.average_fps} with "${info.delay}" delay<br><br>`;
