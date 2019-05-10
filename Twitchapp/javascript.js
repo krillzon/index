@@ -87,7 +87,7 @@ fetch(urc)
     let channelinfo = data.stream.channel;
     if (info.stream_type == "live"){
         krippf.innerHTML += ` <br><br><br>`;
-        krippf.innerHTML += ` CHANNEL NUMBER 2: Scrubnoob. <br>`;
+        krippf.innerHTML += ` CHANNEL NUMBER 3: Scrubnoob. <br>`;
         krippf.innerHTML += ` ${channelinfo.display_name} is playing: ${info.game} <br> Viewer count: ${info.viewers}<br>`;
         krippf.innerHTML += `Started the stream ${info.created_at.slice(0,10)} Time: ${info.created_at.slice(11,19)}<br>`;
         krippf.innerHTML += `Average fps: ${info.average_fps} with "${info.delay}" delay<br><br>`;
