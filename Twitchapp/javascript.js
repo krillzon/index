@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 var uri = "https://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/streams/sodapoppin?client_id=bes85lrqw0ktigy2rjfb174d4oc2hu";
 
 const krippa = document.getElementById('following');
@@ -43,7 +36,7 @@ fetch(uri)
     krippa.innerHTML += ` Total followers: ${channelinfo.followers}<br>`;
     krippa.innerHTML += ` Channel created on: ${channelinfo.created_at.slice(0,10)} Time: ${channelinfo.created_at.slice(11,19)}<br>`;
 
-    } else {krippa.innerHTML += "CHANNEL: Sodapoppin, is offline.<br>";}
+    }
 
 })
 
@@ -88,7 +81,7 @@ fetch(url)
         document.body.appendChild(braking);
 
     }
-    else{kripps.innerHTML += ` CHANNEL: Towellie, is offline.<br>`;}
+
 })
 
 
@@ -108,14 +101,15 @@ fetch(urc)
     if (data.stream != "null"){
 
         let channelinfo = data.stream.channel;
-
+        var braking = document.createElement('br');
         var a = document.createElement('a');
         var linkText = document.createTextNode("Enter Scrubnoobs channel   ");
         a.appendChild(linkText);
         //titel är till för om du vill ha info när du håller på länken
         //a.title = "my title text";
         a.href = "https://www.twitch.tv/scrubnoob";
-        document.body.appendChild(a); 
+        document.body.appendChild(a);  
+        document.body.appendChild(braking);
 
         krippf.innerHTML += ` <br><br><br>`;
         krippf.innerHTML += ` CHANNEL: Scrubnoob. <br>`;
@@ -129,5 +123,5 @@ fetch(urc)
         krippf.innerHTML += ` Total followers: ${channelinfo.followers}<br>`;
         krippf.innerHTML += ` Channel created on: ${channelinfo.created_at.slice(0,10)} Time: ${channelinfo.created_at.slice(11,19)}`;
     }
-    else{kripps.innerHTML += ` CHANNEL: Scrubnoob, is offline.<br>`;}
+ 
 })
