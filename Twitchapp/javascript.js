@@ -1,5 +1,6 @@
 var uri = "https://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/streams/sodapoppin?client_id=bes85lrqw0ktigy2rjfb174d4oc2hu";
-
+var url = "https://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/streams/towelliee?client_id=bes85lrqw0ktigy2rjfb174d4oc2hu";
+var urc = "https://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/streams/scrubnoob?client_id=bes85lrqw0ktigy2rjfb174d4oc2hu";
 const krippa = document.getElementById('following');
 
 
@@ -10,6 +11,7 @@ fetch(uri)
 {
     let info = data.stream;
    
+    krippa.innerHTML += ` CHANNELS: Sodapoppin, Towelliee, Scrubnoob. <br>`;
 
     if (data.stream != "null"){
 
@@ -42,7 +44,7 @@ fetch(uri)
 
 
 
-var url = "https://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/streams/towelliee?client_id=bes85lrqw0ktigy2rjfb174d4oc2hu";
+
 
 const kripps = document.getElementById('following');
 
@@ -86,7 +88,7 @@ fetch(url)
 
 
 
-var urc = "https://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/streams/scrubnoob?client_id=bes85lrqw0ktigy2rjfb174d4oc2hu";
+
 
 const krippf = document.getElementById('following');
 
