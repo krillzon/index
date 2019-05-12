@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>MockAPI</title>
+
+  <style>
+    div {
+    border: 2px solid green;
+    padding: 5px;
+    margin: 5px;
+  } 
+
+
+</style>
+
+</head>
+ 
+<body>
+
+    <a href="" onclick="gymFunction(true)">Gymmet</a>
+    <a href="" onclick="gymFunction(false)">InteGymmet</a>
+
+
+    <div id="datadiv"></div>
+    
+  <script languange="javascript">
+
+    const datadiv = document.getElementById('datadiv');
+      
+      const uri='https://5cd15d84d4a78300147be92e.mockapi.io/isAtTheGym';
+      fetch(uri)
+      .then((resp) => resp.json())
+      .then(function (datas) 
+      { 
+        return datas.map(function (data) 
+        {
+            let divtag = document.createElement('div'); 
+            divtag.innerHTML = `${data.name} - ${data.isAtTheGym}`;
+            datadiv.appendChild(divtag);
+        })
+      });
+      
+      function gymFunction(isAtTheGymNow)
+      {
+          
+          var data = {name: "Christoffer", isAtTheGym: isAtTheGymNow};
+          
+          //Ska det vara komma?
+          
+          fetch(uri, 
+          {
+            method: 'post', 
+          headers:
+          {
+            'Accept' : 'application/json, text/plain, */*',
+            'Content-Type' : 'application/json'
+          },
+              body: JSON.stringify(data)
+          }).then(res => res.json())
+          .then(res => console.log(res))
+
+      }
+
+  </script>
+</body>
+</html>
