@@ -87,16 +87,5 @@ fetch(uri)
                 
         } else { doci.innerHTML += `Kanalen är nere!<br><br>`}
 
-
-
-       
-        
-
-
-        
-
-       
-      
-    
   
 })
